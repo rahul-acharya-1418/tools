@@ -1,0 +1,5 @@
+- nmap -sV -Pn scanme.nmap.org
+- nmap -p 8080 --script=http-auth,http-title -sV scanme.nmap.org
+
+
+- python3 dirsearch -u "https://scanme.nmap.org"
