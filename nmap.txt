@@ -1,6 +1,7 @@
 - nmap -sV -Pn scanme.nmap.org
 - nmap -p 8080 --script=http-auth,http-title -sV scanme.nmap.org
-
+- sudo nmap -p- -T4 -sS -sV -Pn -oN 1.txt 52.43.195.123
 
 - python3 dirsearch -u "https://scanme.nmap.org"
 - https://root0x30.medium.com/how-i-found-multiple-bugs-on-dell-using-reconnaissance-osint-b71e06fa9031
+
