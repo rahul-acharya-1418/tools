@@ -3,3 +3,4 @@
 
 
 - python3 dirsearch -u "https://scanme.nmap.org"
+- https://root0x30.medium.com/how-i-found-multiple-bugs-on-dell-using-reconnaissance-osint-b71e06fa9031
