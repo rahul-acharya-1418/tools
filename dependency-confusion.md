@@ -1,3 +1,5 @@
+https://www.paypal.com/connect/package.json
+
 In bug bounty, **dependency confusion** is a supply chain vulnerability where an attacker tricks a target’s software build process into downloading a **malicious package** from a public repository instead of the intended private/internal one.
 
 ---
