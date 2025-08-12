@@ -2,3 +2,8 @@ wget https://github.com/frohoff/ysoserial/releases/download/v0.0.6/ysoserial-all
 java -jar ysoserial-all.jar
 https://jitpack.io/com/github/frohoff/ysoserial/
 https://payatu.com/blog/insecure-deserialization-java-expliotation/
+
+
+# download the v0.0.6 "all" jar from GitHub releases
+curl -L -o ysoserial-all.jar \
+  https://github.com/frohoff/ysoserial/releases/download/v0.0.6/ysoserial-all.jar
