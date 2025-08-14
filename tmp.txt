@@ -1,0 +1,108 @@
+github search
+npm install
+@amazon
+dependency
+dependencies
+devDependencies
+--------------------------------------------------------------------------------
+
+https://github.com/amzn
+https://github.com/amazon-science
+https://github.com/awslabs
+
+--------------------------------------------------------------------------------
+npm
+npm view sketch-constructor
+npm info sketch-constructor
+npm search sketch-constructor
+
+
+curl
+curl -I https://registry.npmjs.org/sketch-constructor
+
+browser
+https://www.npmjs.com/package/sketch-constructor
+
+--------------------------------------------------------------------------------
+@amazon/
+@amazon/glad
+@amazon-sp-api-release/amazon-sp-api-sdk-js
+@aws-crypto/node-jose_aws-kms-extension
+@amazon/lib-3d-scene-viewer
+@amazonpay
+--------------------------------------------------------------------------------
+https://www.npmjs.com/package/@amazon/glad
+
+--------------------------------------------------------------------------------
+python
+
+pypi/v/amzn-sp-api?label=PyPI
+
+--------------------------------------------------------------------------------
+
+npm install acorn acorn-walk
+
+const fs = require('fs');
+const acorn = require('acorn');
+const walk = require('acorn-walk');
+
+const code = fs.readFileSync('app-29fb75.js', 'utf8');
+const ast = acorn.parse(code, { ecmaVersion: 2020, sourceType: 'script' });
+
+walk.simple(ast, {
+  CallExpression(node) {
+    if (node.callee.name === 'require' && node.arguments.length) {
+      const arg = node.arguments[0];
+      if (arg.type === 'Literal') {
+        console.log(`Static require: ${arg.value}`);
+      }
+    }
+    if (
+      node.callee.type === 'Import' &&
+      node.arguments.length &&
+      node.arguments[0].type === 'Literal'
+    ) {
+      console.log(`Dynamic import: ${node.arguments[0].value}`);
+    }
+  },
+});
+
+node parse.js
+
+
+
+const fs = require('fs');
+const acorn = require('acorn');
+const walk = require('acorn-walk');
+
+const code = fs.readFileSync('app-29fb75.js', 'utf8');
+const ast = acorn.parse(code, { ecmaVersion: 2020, sourceType: 'script' });
+
+walk.simple(ast, {
+  CallExpression(node) {
+//    if (node.callee.name === 'require' && node.arguments.length) {
+//      const arg = node.arguments[0];
+//      if (arg.type === 'Literal') {
+//        console.log(`Static require: ${arg.value}`);
+//      }
+//    }
+      if (node.callee.name === 'require' && node.arguments.length) {
+        const arg = node.arguments[0];
+        if (arg.type === 'Literal') {
+          const dep = arg.value;
+          // Filter out relative imports
+          if (!dep.startsWith('./') && !dep.startsWith('../') && !dep.startsWith('/')) {
+            console.log(`Static require: ${dep}`);
+          }
+        }
+      }
+
+    if (
+      node.callee.type === 'Import' &&
+      node.arguments.length &&
+      node.arguments[0].type === 'Literal'
+    ) {
+      console.log(`Dynamic import: ${node.arguments[0].value}`);
+    }
+  },
+});
