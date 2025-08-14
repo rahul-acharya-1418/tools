@@ -1,6 +1,8 @@
 - verify
 ```
-curl -I "https://registry.npmjs.org/browserify-sign" 
+curl -I "https://registry.npmjs.org/browserify-sign"
+
+ffuf -w ~/tmp.txt -c -u "https://registry.npmjs.org/FUZZ" -mc all
 ```
 - grep
 ```
