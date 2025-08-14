@@ -1,0 +1,39 @@
+id: detect-dependency-metadata
+
+info:
+  name: Detect npm/pip/ruby/maven dependency keywords
+  author: rahul
+  severity: info
+  description: Detects potential package references across common ecosystems (Node.js, Python, Ruby, Java/Maven).
+  tags: exposure,dependency_confusion
+
+requests:
+  - method: GET
+    path:
+      - "{{BaseURL}}"
+
+    matchers-condition: or
+    matchers:
+      - type: word
+        part: body
+        words:
+          # JavaScript / npm
+          - "node_modules/"
+          - "package.json"
+          - "package-lock.json"
+          - "dependencies"
+          # Python / pip
+          - "requirements.txt"
+          - "setup.py"
+          - "install_requires"
+          - "pyproject.toml"
+          # Ruby / RubyGems
+          - "Gemfile"
+          - ".gemspec"
+          - "gem '"
+          - "require '"
+          # Java / Maven
+          - "pom.xml"
+          - "<dependency>"
+          - "<groupId>"
+          - "<artifactId>"

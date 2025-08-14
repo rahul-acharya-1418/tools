@@ -1,0 +1,23 @@
+id: detect-node-modules
+
+info:
+  name: Detect node_modules, package.json, or dependencies in JS Files
+  author: rahul
+  severity: info
+  description: Checks for common Node.js-related exposure keywords in JS files.
+  tags: exposure,js,node_modules
+
+requests:
+  - method: GET
+    path:
+      - "{{BaseURL}}"
+
+    matchers:
+      - type: word
+        part: body
+        words:
+          - "node_modules/"
+          - "package.json"
+          - "package-lock.json"
+          - "dependencies"
+        condition: or
